@@ -27,7 +27,12 @@ function preguntasYRespuestas() {
 
                     contenedorFinal.innerHTML =
                 `   
-                    <div><p>Has terminado, tu puntuacion es ${puntuacion}</p></div>
+                    <div>
+                    <p>Has terminado, has acertado ${puntuacion} preguntas</p>
+                    <button id="reload" onclick="location.reload()">
+                    ¡Volver a jugar!
+                    </button>
+                    </div>
                 `
                 contenedor.appendChild(contenedorFinal);
 
@@ -38,14 +43,21 @@ function preguntasYRespuestas() {
 
                 const contenedor2 = document.createElement("div");
 
+                const botones = document.createElement("div");
+
                 if(c < data.length) {
                     contenedor2.className = "preguntayrespuesta";
 
-                contenedor2.innerHTML =
-                `   
-                    <div class="pregunta">
-                    <h2>Pregunta ${c + 1}: ${data[c].question}</h2>
-                    </div>
+                    botones.className = "botones";
+
+                    contenedor2.innerHTML =
+                    `   
+                        <div class="pregunta">
+                        <h2>Pregunta ${c + 1}: ${data[c].question}</h2>
+                        </div>
+                    `
+                    botones.innerHTML =
+                    `   
                     <button id="respuesta1">
                     ${data[c].answers[0]}
                     </button>
@@ -58,9 +70,11 @@ function preguntasYRespuestas() {
                     <button id="respuesta4">
                     ${data[c].answers[3]}
                     </button>
-                `
+                    `
 
-                contenedor.appendChild(contenedor2);
+                    contenedor.appendChild(contenedor2);
+
+                    contenedor.appendChild(botones);
                 }
 
                     const boton1 = document.getElementById("respuesta1");
@@ -102,6 +116,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     puntuacion++;
         
@@ -114,6 +130,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     mostrar();
     
@@ -133,6 +151,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     puntuacion++;
         
@@ -145,6 +165,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     mostrar();
                                     
@@ -164,6 +186,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     puntuacion++;
         
@@ -176,6 +200,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     mostrar();
                                     
@@ -196,6 +222,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     puntuacion++;
         
@@ -208,6 +236,8 @@ function preguntasYRespuestas() {
                                     c++;
     
                                     contenedor2.parentNode.removeChild(contenedor2);
+
+                                    botones.parentNode.removeChild(botones);
     
                                     mostrar();
                                     
